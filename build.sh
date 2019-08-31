@@ -14,15 +14,15 @@ export ARCH=arm
 export SUBARCH=arm
 export CROSS_COMPILE=$TOOLCHAIN/bin/arm-linux-androideabi-
 
-if ! [ -f $RDIR"/arch/arm/configs/lineageos_hammerhead_defconfig" ] ; then
-	echo "lineageos_hammerhead_defconfig defconfig not found in arm64 configs!"
+if ! [ -f $RDIR"/arch/arm/configs/zero_hammerhead_defconfig" ] ; then
+	echo "zero_hammerhead_defconfig defconfig not found in arm64 configs!"
 	exit -1
 fi
 
 BUILD_KERNEL()
 {
 	echo "Creating kernel config..."
-	make lineageos_hammerhead_defconfig
+	make zero_hammerhead_defconfig
 	echo "Starting build..."
 	make -j$(nproc --all)
 }
